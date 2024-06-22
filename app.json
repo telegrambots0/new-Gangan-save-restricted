@@ -1,0 +1,72 @@
+{
+    "name": "Save restricted content bot by @SmexyOP",
+    "description": "Telegram bot to save restricted content.",
+    "logo": "https://graph.org/file/c9669066860d912fd5035.jpg",
+    "keywords": [
+        "telegram",
+        "Save restricted content",
+        "bot"
+    ],
+    "repository": "https://github.com/SmexyStore/SmexySaveRistrictedBot",
+    "website": "",
+    "success_url": "https://t.me/SmexyStore",
+    "env": {
+        "API_HASH": {
+            "description": "Your API HASH from my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Your API ID from my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Bot token, get it from @BotFather.",
+            "value": "",
+            "required": true
+        },
+        "SESSION": {
+            "description": "Pyrogram string session.",
+            "value": "",
+            "required": true
+        },
+        "AUTH": {
+            "description": "User ID of Bot owner.",
+            "value": "",
+            "required": true
+        },
+        "FORCESUB": {
+            "description": "Username name of public channel without using '@'.",
+            "value": "",
+            "required": true
+        },
+        "MONGODB": {
+            "description": "Enter your own MongoDB URI.",
+            "value": "",
+            "required": false
+        },
+        "OWNER_ID": {
+            "description": "Your Telegram ID",
+            "value": "",
+            "required": true
+        },
+        "LOG_GROUP": {
+            "description": "Enter log group ID with -100",
+            "value": "",
+            "required": true
+        }
+    },
+    "stack": "container",
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "scripts": {
+        "worker": "python -m main"
+    }
+}
